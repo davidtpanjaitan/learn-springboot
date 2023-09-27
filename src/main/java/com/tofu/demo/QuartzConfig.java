@@ -63,7 +63,7 @@ public class QuartzConfig {
         return TriggerBuilder.newTrigger()
                 .forJob(myJobDetail())
                 .withIdentity("reportTrigger", "group1")
-
+                .startNow()
                 .withSchedule(CronScheduleBuilder.cronSchedule("0/1 * * * * ?"))
                 .build();
 
